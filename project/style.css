@@ -1,0 +1,123 @@
+body{
+    background-color: white;
+    background-color: mediumturquoise;
+}
+
+.container{
+    width: 100%;
+    height: 700px;
+    margin: auto;
+    float:left;
+    background-color: mediumturquoise;
+}
+
+#scorebox{
+    width: 100%;
+    height: 150px;
+    float: left;
+    background-color: mediumturquoise;
+}
+
+#scoreboard{
+    width: 300px;
+    height: 150px;
+    margin-left: 39%;
+    margin-bottom: 20px;
+    float: left;
+    background-color: #B72E33;
+}
+
+#scoreText{
+    color:black;
+    font-size: 30px;
+}
+
+.playerboxes{
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+    float:left;
+    background-color: #B72E33;
+}
+
+#player{
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+.playertag{
+    left:300px;
+}
+
+.versusbox{
+    width: 150px;
+    height: 50px;
+    float:left;
+    margin-top: 300px;
+    margin-left: 180px;
+}
+
+#computer{
+    margin-top: 100px;
+    margin-left: 160px;
+}
+
+.computertag{
+    right:290px;
+}
+
+.buttoncontainer{
+    display: flex;
+    flex-direction: row;
+    float:left;
+    width: 100%;
+    height: 100px;
+    margin-top: 120px;
+    padding-left: 335px;
+}
+
+.position {
+    position:absolute;
+    top:200px;
+}
+
+.border{
+    border-radius: 2px;
+    border-style: solid;
+    border-color: white;
+}
+
+#movetext{
+    position:absolute;
+    left:600px;
+    bottom: 180px;
+}
+
+
+.image{
+    width:200px;
+    height:200px;
+    margin: 20px 20px 50px 20px;
+}
+
+.click{
+    background-color: #B72E33;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 18pt;
+    width: 12%;
+    height: 100px;
+    border-radius: 10px;
+    margin-left: 60px;
+    cursor: pointer;
+}
+
+.restart{
+    display:none;
+    margin-left: 290px;
+}
+
+.center{
+    text-align: center;
+}
