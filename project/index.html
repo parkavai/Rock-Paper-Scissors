@@ -4,54 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class ="container">
+    <main>
+        <div class ="container">
 
-        <div id = "scorebox">
-
-            <div class="border" id="scoreboard">
-                <h1 class="center" id="winnerText"></h1>
-                <h1 class="center" id="roundText"></h2>
-                <p class="center" id="scoreText"></p>
+            <div id = "scorebox">
+    
+                <div class="border" id="scoreboard">
+                    <h1 class="center" id="winnerText"></h1>
+                    <h1 class="center" id="roundText"></h2>
+                    <p class="center" id="scoreText"></p>
+                </div>
+    
             </div>
-
+    
+            <div class="playerboxes border" id="player">
+    
+                <h2 class="position playertag">Player</h2>
+                <img src = "game.png" class="image" id="user_image">
+    
+            </div>
+    
+    
+            <div class="versusbox">
+    
+                <h1 class="center">VS</h1>
+    
+            </div>
+    
+    x
+            <div class="playerboxes border" id="computer">
+    
+                <h2 class="position computertag" >Computer</h2>
+                <img src = "game.gif" class="image" id="cpu_image">
+    
+            </div>
+    
+            <h1 id="movetext">Make your move</h1>
+    
+            <div class="buttoncontainer">
+    
+                <button class="click" id="Rock">Rock</button>
+                <button class="click" id="Scissors">Scissors</button>
+                <button class="click" id="Paper">Paper</button>
+                <button class ="click restart">Restart</button>
+    
+            </div>
         </div>
-
-        <div class="playerboxes border" id="player">
-
-            <h2 class="position playertag">Player</h2>
-            <img src = "game.png" class="image" id="user_image">
-
-        </div>
-
-
-        <div class="versusbox">
-
-            <h1 class="center">VS</h1>
-
-        </div>
-
-x
-        <div class="playerboxes border" id="computer">
-
-            <h2 class="position computertag" >Computer</h2>
-            <img src = "game.gif" class="image" id="cpu_image">
-
-        </div>
-
-        <h1 id="movetext">Make your move</h1>
-
-        <div class="buttoncontainer">
-
-            <button class="click" id="Rock">Rock</button>
-            <button class="click" id="Scissors">Scissors</button>
-            <button class="click" id="Paper">Paper</button>
-            <button class ="click restart">Restart</button>
-
-        </div>
-    </div>
-    <script type="text/javascript" src="script.js"></script>
+    </main>
 </body>
 </html>
