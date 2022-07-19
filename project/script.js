@@ -3,19 +3,20 @@ let computerScore = 0;
 let totalRounds = 5;
 
 const scoreText = document.getElementById("scoreText");
-const roundsText = document.getElementById("roundText");
-const winnerText = document.getElementById("winnerText");
+const statusText = document.getElementById("statusText");
 const buttons = document.querySelectorAll('.click');
 
+// Initalize the game 
 const game = () =>{
-    winnerText.innerHTML = "First round to 5";
+    statusText.innerHTML = "First round to 5";
     buttons.forEach(button => button.addEventListener('click', playGame));
 }
 
+/**
+ * Based on the button which is clicked, the winner of the round will be announced and we also have to ensure 
+ * wether we have reached the total amount of rounds
+ */
 const playGame = (e) => {
-    winnerText.style.display = 'None';
-    roundsText.innerHTML = `Rounds left: ${totalRounds}`;
-    scoreText.innerHTML = `${playerScore} : ${computerScore}`;
     buttonClick = e.target.id;
     player = playerChoice(buttonClick);
     computer = computerChoice();
@@ -25,11 +26,13 @@ const playGame = (e) => {
     }
 }
 
+// Updates the score after each round
 const updateScore = () =>{
     scoreText.innerHTML = `${playerScore} : ${computerScore}`;
-    roundsText.innerHTML = `Rounds left: ${totalRounds}`;
+    statusText.innerHTML = `Rounds left: ${totalRounds}`;
 }
 
+// Inserts the image based on player choice
 const playerChoice = (click) => {
     const player_image = document.getElementById("user_image");
 
@@ -48,6 +51,7 @@ const playerChoice = (click) => {
 
 }
 
+// Selects a random choice 
 const computerChoice = () => {
     let number = Math.floor(Math.random() * 3);
     const computer_image = document.getElementById("cpu_image");
@@ -66,6 +70,12 @@ const computerChoice = () => {
     }
 }
 
+/** 
+ * Winner is chosen through the rules of "Rock, Paper and Scissors", which is displayed as follows:
+ * Rock beats Scissors
+ * Scissors beats Paper
+ * Paper beats Rock
+ */
 const winner = (player, computer) => { 
     if(player == computer){
         totalRounds -= 1;
@@ -105,24 +115,22 @@ const winner = (player, computer) => {
     updateScore()    
 }
 
+// Game is over and the winner will be announced based on number of points. Also display replay button for the user. 
 const gameOver = (playerScore, computerScore) => {
     const reloadBTN = document.querySelector('.restart');
     buttons.forEach(button => button.style.display = 'none');
-    roundsText.style.display = 'none';
-    scoreText.style.display = 'none';
-    winnerText.style.display = 'block';
     document.getElementById("movetext").style.display = 'none';
+
     if(playerScore == computerScore){
-        winnerText.innerHTML = `It ends with a tie`;
+        statusText.innerHTML = `It ends with a tie`;
     }
     else if(playerScore > computerScore){
-        winnerText.style.color = 'black';
-        winnerText.innerHTML = `You win!`;
+        statusText.innerHTML = `You win!`;
     }
     else{
-        winnerText.style.color = 'black';
-        winnerText.innerHTML = 'You lose'
+        statusText.innerHTML = 'You lose';
     }
+
     reloadBTN.innerText = 'Restart';
     reloadBTN.style.display = 'block';
     reloadBTN.addEventListener('click', () => {
